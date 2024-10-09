@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Learn Computing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script>    
+</head>
+
+<body>
+    <hr id = "bottomLine">
+    <hr id = "topLine">
+    <div>
+    <div id = "home">
+        <div>
+            <h1 id = "title"></h1>
+            <p id = "titleDesc">Welcome to your Python learning journey! This site covers everything from the foundational concepts of programming, like data types and control structures, to more advanced techniques, such as exception handling and modular design. Whether you're just starting out with Python or aiming to refine your coding skills, you’ll find comprehensive lessons on key topics like flowcharts, file I/O, and libraries. Each section is designed to help you build a deeper understanding of Python, setting you on the path to becoming a confident and efficient programmer.</p>
+            <button id = "homeStart" onclick="goToMenu()">Start Your Journey Now</button>
+        </div>
+        <img src="../images/homeArt.png" id = "homeImage"></img>
+    </div>
+    <div id = "menus">
+        <div class = "row">
+            <button class = "menuOption">
+                <div style = "display: flex; align-items: center; width: 100%;">
+                    <span class = "optionNumbering"></span><span class = "optionTitle">Your<br>Computer</span>
+                </div>
+                <hr class = "lineBreak">
+                <p class = "optionDescription">Learn about the four classical functions of computers, which form the core processes that drive how a computer operates. These functions—input, processing, storage, and output—represent the essential stages in handling data, transforming raw information into meaningful results.</p>
+            </button>
+            <button class = "menuOption">
+                <div style = "display: flex; align-items: center; width: 100%;">
+                    <span class = "optionNumbering"></span><span class = "optionTitle">Software<br>Development</span>
+                </div>
+                <hr class = "lineBreak">
+                <p class = "optionDescription">Discover the stages of the Software Development Life Cycle (SDLC), which outline the structured process of creating high-quality software. The SDLC encompasses a series of phases that guide teams from the initial concept to the final product.</p>
+            </button>
+            <button class = "menuOption">
+                <div style = "display: flex; align-items: center; width: 100%;">
+                    <span class = "optionNumbering"></span><span class = "optionTitle">Control<br>Structures</span>
+                </div>
+                <hr class = "lineBreak">
+                <p class = "optionDescription">Explore control structures and flowcharts, essential tools for understanding and designing the logic of a program. This subpage covers the various flowchart symbols and the three primary types of control structures.</p>
+            </button>
+        </div>
+        <div class = "row">
+            <button class = "menuOption">
+                <div style = "display: flex; align-items: center; width: 100%;">
+                    <span class = "optionNumbering"></span><span class = "optionTitle">Python<br>Fundamentals</span>
+                </div>
+                <hr class = "lineBreak">
+                <p class = "optionDescription">Get started with one of the most versatile programming languages in this introduction covering key fundamentals – data types, operators, coding conventions, and collections.</p>
+            </button>
+            <button class = "menuOption">
+                <div style = "display: flex; align-items: center; width: 100%;">
+                    <span class = "optionNumbering"></span><span class = "optionTitle">Modular<br>Programming</span>
+                </div>
+                <hr class = "lineBreak">
+                <p class = "optionDescription">Delve into modular programming by exploring how to use libraries on Python, and learning how to create your own functions and objects. This lesson also covers the four pillars of Object Oriented Programming.</p>
+            </button>
+            <button class = "menuOption">
+                <div style = "display: flex; align-items: center; width: 100%;">
+                    <span class = "optionNumbering"></span><span class = "optionTitle">More<br>Python</span>
+                </div>
+                <hr class = "lineBreak">
+                <p class = "optionDescription">Sharpen your Python skills by handling more advanced topics crucial for robust code – starting with exception handling, slicing, and finally file I/O.</p>
+            </button>
+        </div>
+    </div>
+    </div>
+    <div id = "lessonContainer">
+        <div id = "lesson01" class = "lessons">
+            <div class = "lessonHeadingContainer">
+                <hr class = "lessonHeadingLine">
+                <h1 class = "lessonHeading"> </h1>
+            </div>
+            <div class = "lessonContainer1">
+                <div class = "lessonContent1">
+                    <p style = "margin-bottom: 2vh;">Your computer is composed of four classical functions: <span>Input, Process, Storage, and Output</span>. Figure 1 summarizes these functions graphically. Let's break it down.</p>
+                    <div style = "width: 100%; contain: content; margin-bottom: 2vh;">
+                        <figure style = "width: 100%; float: left; text-align: center;">
+                            <img src = "images/0101.png" style = "max-height: 20vh;">
+                            <figcaption style = "text-align: center;">Figure 1. The Four Classical Functions of a Computer</figcaption>
+                        </figure>
+                    </div>
+                    <h1 id = "input">Input</h1>
+                        <p>Data that needs to be processed or stored is <span>encoded</span> to enter the system. This process involves converting information from <span>analog</span> to <span>digital</span> format so that the computer can effectively <span>process</span> it. Various devices such as the <span>keyboard</span>, <span>mouse</span>, and <span>microphone</span> are commonly used to input data into the system. Some examples of data input situations include <span>uploading files</span>, <span>typing notes</span>, and <span>recording audio</span>.</p>                        
+                    <h1 id = "process">Process</h1>
+                        <p>Once data is collected, it undergoes various operations to be transformed into useful <span>information</span>. This process is crucial as it allows raw data to be interpreted and utilized effectively. Common examples of how data is processed include <span>searching</span> for specific information within a database, performing <span>calculations</span> to manipulate numerical data, <span>analyzing</span> patterns or trends to gain insights, and <span>converting</span> data from one format to another to ensure compatibility with different systems or applications. These processes are essential to derive meaningful insights and make informed decisions based on the data at hand.</p>                        
+                    <h1 id = "storage">Storage</h1>
+                        <p><span>Processed data</span> is typically <span>stored</span> for future use to ensure it can be accessed or utilized as needed. In the short term, a computer keeps this information in its primary storage, known as <span>RAM</span>, which allows quick access for ongoing tasks. For long-term storage, information is saved on your computer’s <span>solid-state drive (SSD)</span> or <span>hard disk drive (HDD)</span>. Recently, <span>Cloud Storage</span> has become a popular option, allowing data to be stored online and accessed from most devices with internet connectivity. For offline and portable use, information can be saved on <span>flash drives</span>, providing a convenient way to transfer data between devices.</p>                        
+                    <h1 id = "output">Output</h1>
+                        <p>After processing, data is presented in formats that align with the user’s specific <span>goals</span>, making it easier to understand and use. Various devices are utilized to <span>display information</span>, including the <span>monitor</span>, <span>printer</span>, and <span>speaker</span>. These devices allow the user to interact with the processed data in different ways. For instance, <span>playing music files</span> through a speaker provides an audio output, while <span>printing word documents</span> using a printer offers a physical copy of the information. Additionally, <span>slideshow presentations</span> displayed on a monitor visually present data to an audience, enhancing communication and comprehension.</p>
+                </div>
+                <div class = "hyperlinks">
+                    <h1>Table of Contents</h1>
+                    <ul class = "tableOfContents">
+                        <li><a href = "#input">Input</a></li>
+                        <li><a href = "#process">Process</a></li>
+                        <li><a href = "#storage">Storage</a></li>
+                        <li><a href = "#output">Output</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id = "lesson02" class = "lessons">
+            <div class = "lessonHeadingContainer">
+                <hr class = "lessonHeadingLine">
+                <h1 class = "lessonHeading"> </h1>
+            </div>
+            <div class = "lessonContainer1">
+                <div class = "lessonContent1">
+                    <h1 id = "definition">Definition</h1>
+                        <p>Software development is the process of <span>conceptualizing, designing, programming, and deploying</span> software applications that address particular needs or solve specific problems. It involves transforming ideas or requirements into functional software through a series of steps, including coding, testing, and debugging to ensure the software operates effectively. The goal of software development is to <span>build reliable, efficient, and user-friendly solutions</span> tailored to various business or individual needs. Central to this process is the structured approach to managing development, often referred to as the <span>Software Development Life Cycle (SDLC)</span>, which outlines the stages involved from idea to deployment.</p>
+                    <h1 id = "lifecycle">Software Development Life Cycle</h1>
+                        <div style = "width: 100%; contain: content;">
+                            <figure style = "width: 70%; float: left">
+                                <img src = "https://www.zentao.pm/file.php?f=202012/f_14dea8296206cbba7100ffe9d3afd4b7&t=png&o=&s=&v=1606978156" style = "text-align: center;">
+                                <figcaption style = "text-align: center;">Figure 1. Software Development Life Cycle</figcaption>
+                            </figure>
+                            <p>The figure on the left outlines the Software Development Life Cycle. It begins with <span>Requirement Analysis</span>, where the requirements of the software are defined in detail, and how these requirements will be implemented. This is followed by <span>System Design</span>, where the software is designed through methods such as flowcharts and pseudocode. In <span>Implementation</span>, a working program is made. <span>Testing</span> is essentially checking if the program satisfies the requirements. A way of viewing it is messing around with the program in an attempt to break it, and fixing these. In <span>Deployment</span>, the program is released for the end users. This is done when the program is finalized with no more issues that can be identified. Finally, <span>Maintenance</span> encompasses the upkeep of the program by updating to add new features and modifications, and fixing flaws identified by users.</p>
+                        </div>
+                    <h1 id = "l1example1">Example</h1>
+                        <p>Let's try using the SLDC to create a program to solve something simple. Say we want to make a <span>random number guessing game</span>. For the first step, we identify the goal and requirements of the software:</p>
+                        <br>
+                        <p>Goal: To create a game where the computer selects a random number within a given range, and the user has to guess the number.</p>
+                        <p>Requirements:</p>
+                        <ul style = "margin-left: 2vw">
+                            <li>The program generates a random number from 1 to 100</li>
+                            <li>The user enters guesses that have to be integers from 1 to 100 until the correct number is found</li>
+                            <li>The program provides feedback on whether or not the guess was too high, too low, or correct</li>
+                            <li>The program keeps track of the number of guesses made</li>
+                        </ul>
+                        <br>
+                        <p>The second step involves outlining how the code would look like by using something like pseudocode:</p>
+                        <ol style = "margin-left: 2vw">
+                            <li>Generate a random number between 1 and 100.</li>
+                            <li>Initialize attempts to 0.</li>
+                            <li>Repeat until the user guesses the correct number:
+                                <ol type="a" style = "margin-left: 2vw">
+                                    <li>Ask user for an integer input.</li>
+                                    <li>If input is not a valid integer, ask again.</li>
+                                    <li>Increase attempts by 1.</li>
+                                    <li>If input is less than the random number, print "Too low."</li>
+                                    <li>If input is greater than the random number, print "Too high."</li>
+                                    <li>If input is equal to the random number, print "Congratulations!" and the number of attempts.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <br>
+                        <p>For steps 2 and 3, this program can be coded on a variety of languages such as Python, C++, and Java.</p>
+                        <br>
+                        <p>Meanwhile, the final two steps can be done using tools such as GitHub, which allow you to publish and release new versions of your code.</p>
+                </div>
+                <div class = "hyperlinks">
+                    <h1>Table of Contents</h1>
+                    <ul class = "tableOfContents">
+                        <li><a href = "#definition">Input</a></li>
+                        <li><a href = "#lifecycle">Software Development Life Cycle (SLDC)</a></li>
+                        <li><a href = "#l1example1">Example</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id = "lesson03" class = "lessons">
+            <div class = "lessonHeadingContainer">
+                <hr class = "lessonHeadingLine">
+                <h1 class = "lessonHeading"> </h1>
+            </div>
+            <div class = "lessonContainer1">
+                <div class = "lessonContent1">
+                    <h1 id = "symbols">Frequently Used Flowchart Symbols</h1>
+                    <p style = "margin-bottom: 2vh;">As an overview, flowcharts are useful in programming since it allows programmers to <span>visualize</span> exactly where data goes and where <span>possible problems may arise</span>. In particular, flowcharts can be helpful in the <span>second step of the SDLC</span>. The table below summarizes the various symbols, as well as their functions.</p>
+                    <div style = "width: 100%; contain: content; margin-bottom: 2vh;">
+                        <figure style = "width: 100%; float: left; text-align: center;">
+                            <img src = "images/0301.png" style = "max-height: 90vh;">
+                            <figcaption style = "text-align: center;">Figure 1. Table of Essential Flowchart Symbols</figcaption>
+                        </figure>
+                    </div>
+                    <h1 id = "l3example1">Example Flowchart</h1>
+                    <p style = "margin-bottom: 2vh;">Let's try to apply these symbols in a simple "Guess the Number" game.</p>
+                    <div style = "width: 100%; contain: content; margin-bottom: 2vh;">
+                        <figure style = "width: 50%; float: left; text-align: center;">
+                            <img src = "images/0302.png" style = "max-height: 80vh;">
+                            <figcaption style = "text-align: center;">Figure 2. Guess the Number Game Flowchart</figcaption>
+                        </figure>
+                        <p style = "margin-left: 52%">The figure on the left shows a sample flowchart for a game where the user has to guess a number from 1 to 100.</p>
+                        <br>
+                        <p style = "margin-left: 52%">The program first initializes the number of guesses to 0, then determines the number the user has to guess by picking a random number from 1 to 100.</p>
+                        <br>
+                        <p style = "margin-left: 52%">Afterwards, the program asks the user for an integer input (for simplicity, we assume that the user is competent enough to not write down a float, or something that isn't an integer from 1 to 100).</p>
+                        <br>
+                        <p style = "margin-left: 52%">It then increments the number of guesses by 1, and checks if the user is right.</p>
+                        <br>
+                        <p style = "margin-left: 52%">If so, the program prints out a message as well as the number of guesses it took, then the program ends.</p>
+                        <br>
+                        <p style = "margin-left: 52%">If the number is wrong, it asks the user again.</p>
+                        <br>
+                        <p style = "margin-left: 52%">It's important to note that the program uses an on-page connector for demonstration, but in reality it would be better to straight up connect the two elements with a normal arrow.</p>
+                    </div>
+                    <h1 id = "sequentialStructure">Sequential Control Structure</h1>
+                        <p>A sequential control structure is an example of a control structure in Python. <span>Control structures specify the flow of control in programs.</span></p>
+                        <p style = "margin-bottom: 2vh;">For a <span>sequential control structure</span>, statements are executed line-by-line, in the same order which they appear. Figure 3 is an example of a sequential structure.</p>
+                        <div style = "width: 100%; contain: content; margin-bottom: 2vh;">
+                            <figure style = "width: 100%; float: left; text-align: center;">
+                                <img src = "images/0303.png" style = "max-height: 60vh;">
+                                <figcaption style = "text-align: center;">Figure 3. Sequential Control Structure Example</figcaption>
+                            </figure>
+                        </div>
+                    <h1 id = "conditionalStructure">Conditional Control Structure</h1>
+                        <p style = "margin-bottom: 2vh;">For a <span>conditional control structure</span>, statements are executed <span>based on a certain condition</span>. If the condition is true, then only statements related to that will be executed. The same is true if the condition is false. Figure 4 is an example of a conditional control structure.</p>
+                        <div style = "width: 100%; contain: content; margin-bottom: 2vh;">
+                            <figure style = "width: 100%; float: left; text-align: center;">
+                                <img src = "images/0304.png" style = "max-height: 60vh;">
+                                <figcaption style = "text-align: center;">Figure 4. Conditional Control Structure Example</figcaption>
+                            </figure>
+                        </div>
+                    <h1 id = "iterativeStructure">Iterative Control Structure</h1>
+                        <p>For an <span>iterative control structure</span>, a statement or group of statements is executed until the program reaches a certain state or requirement. The latter part of Figure 2 is an example of an iterative control structure since the program keeps asking the user for a number until the user gets it right.</p>
+                </div>
+                <div class = "hyperlinks">
+                    <h1>Table of Contents</h1>
+                    <ul class = "tableOfContents">
+                        <li><a href = "#symbols">Frequently Used Flowchart Symbols</a></li>
+                        <li><a href = "#l3example1">Example Usage of Flowcharts</a></li>
+                        <li><a href = "#sequentialStructure">Sequential Control Structure</a></li>
+                        <li><a href = "#conditionalStructure">Conditional Control Structure</a></li>
+                        <li><a href = "#iterativeStructure">Iterative Control Structure</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id = "lesson04" class = "lessons">
+            <div class = "lessonHeadingContainer">
+                <hr class = "lessonHeadingLine">
+                <h1 class = "lessonHeading"> </h1>
+            </div>
+            <div class = "lessonContainer1">
+                <div class = "lessonContent1">
+                    <h1 id = "datatypes">Data Types</h1>
+                        <p>Before we get into anything, let's first familiarize ourselves with the basic data types in Python. Starting off, we have:</p>
+                        <br>
+                        <h2><span>Strings</span></h2>
+                        <pre><code class="language-python">
+x = "This is a string type"
+y = 90 # This is not a string type
+
+# The str() function can turn y into a String type
+
+print(type(y)) # outputs &lt;class 'int'&gt;
+
+y = str(y)
+
+print(type(y)) # outputs &lt;class 'str'&gt;
+                        </code></pre>
+                        <br>
+                        <h2><span>Integers</span></h2>
+                        <pre><code class="language-python">
+x = 10 # This is an int
+y = "90" # This is not an int
+
+# The int() function can turn y into an int 
+
+print(type(y)) # outputs &lt;class 'str'&gt;
+
+y = int(y)
+
+print(type(y)) outputs &lt;class 'int'&gt;
+                        </code></pre>
+                        <br>
+                        <h2><span>Floats</span></h2>
+                        <pre><code class="language-python">
+x = 1.00 # This is a float
+y = "-5.00" # This is not a float
+z = 1
+
+# The float() function can turn y into an float 
+
+print(type(y)) # outputs &lt;class 'str'&gt;
+
+y = float(y)
+
+print(type(y)) # outputs &lt;class 'float'&gt;
+
+z = float(z)
+print(type(z)) # outputs &lt;class 'float'&gt;
+print(z) #outputs 1.0
+                        </code></pre>
+                        <br>
+                        <h2><span>Booleans</span></h2>
+                        <pre><code class="language-python">
+x = True # This is a boolean
+# Variables y, z, and a are not booleans
+y = 0
+z = ""
+a = "I am very sleepy."
+
+# The bool() function can turn y, z, and a into booleans. Specifically:
+# empty strings, zero values, and NoneTypes return False
+# non-empty strings and non-zero values all return True
+
+# For variable y
+print(y) # outputs 0
+print(type(y)) outputs &lt;class 'int'&gt;
+
+y = bool(y)
+
+print(y) # outputs False
+print(type(y)) # outputs &lt;class 'bool'&gt;
+
+# For variable z 
+print(z) # outputs ""
+print(type(z)) # outputs &lt;class 'str'&gt;
+
+z = bool(z)
+
+print(z) # outputs False
+print(type(z)) # outputs &lt;class 'bool'&gt;
+
+# For variable a 
+print(a) # outputs "I am very sleepy."
+print(type(a)) # outputs &lt;class 'str'&gt;
+
+a = bool(a)
+
+print(a) #outputs True
+print(type(a)) #outputs &lt;class 'bool'&gt;
+                        </code></pre>
+                        <br>
+                        <h2><span>Collections</span></h2>
+                        <p>There's also this thing called <span>collections</span> in Python. The summary of collections is found below.</p>
+                        <div style = "width: 100%; contain: content; margin-bottom: 2vh;">
+                            <figure style = "width: 100%; float: left; text-align: center;">
+                                <img src = "images/0401.png" style = "max-height: 50vh;">
+                                <figcaption style = "text-align: center;">Figure 1. Collections in Python</figcaption>
+                            </figure>
+                        </div>
+                    <h1 id = "operators">Operators</h1>
+                        <p>There are a lot of types of operators in Python.</p>
+                        <p>To begin, let's discuss the most basic one:</p>
+                        <h2><span>Arithmetic Operators</span></h2>
+                        <pre><code class="language-python">
+### Addition is done by using +. This is usually done with the same datatypes so as to not raise a TypeError, but addition between integers and floats is possible.
+x = 5
+y = 4.0
+a = [1, "What?"]
+b = [True, 3.14]
+print(x + y) # outputs 9.0, so it actually turns the result to a float
+print(a + b) # outputs [1, 'What?', True, 3.14]
+
+bool1 = True
+bool2 = False
+print(bool1 + bool2) # This actually returns 1. The program evaluates True as 1 and False as 0, so 1 + 0 = 1. Actually, the same goes for all other arithmetic operations; True is treated as 1 and False as 0
+
+### Subtraction is done by using -. Like addition, it's usually done with the same datatypes except for ints and floats
+print(x - y) # outputs 1.0, likewise turns the result to a float
+
+# In our case, we can't subtract b from a or vice-versa. Subtracting lists with each other is not a thing, at least using -. What we can do is something like:
+c = {1, 2, 3, 4}
+d = {1, 3, 4, 5, 6, 7, 8}
+print(c - d) # outputs {2}
+
+### Multiplication is done by using *. Similar to the last two, multiplying an int to a float turns the result to a float. Some other notable stuff include:
+sample_string = "I like turtles"
+print(sample_string * 2) # outputs "I like turtlesI like turtles"
+
+sample_list = [1, 2, 3, 4, 5]
+print(sample_list * 2) #outputs [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+### Division is done by using /. Dividing an int to a float turns the result to a float. Some other notable stuff include:
+print(bool2/bool1) # outputs 0.0
+print(20/4) # outputs 5.0
+
+# Floor division is the counterpart of this that returns the floor of the result. It uses //.
+print(21//4) # outputs 5
+
+### Modulo is done by using %. It returns the remainder of the division of two numbers. For unsupported types, it will raise a TypeError.
+print(17 % -2) # outputs -1
+# The example here uses the unary operator (-) to negate 2. You can also do the same with +
+
+print(20 % 2.0) # outputs 0.0
+
+### Exponentiation is done using **. It returns the first number raised to the second number. You can only use it on integers and floats
+num1 = 2
+num2 = 2
+print(2**2) # outputs 4
+num1 = 2.0
+print(2**2.0) # outputs 4.0
+
+# It's also important to note that you can use parentheses to control the order in which operations are performed, just like in actual mathematics.
+answer = answer = (2 + 6) * 8
+print(answer) # outputs 64, since it evaluates 2+6 first, then multiplies the result by 8
+                        </code></pre>
+                        <br>
+                        <h2><span>Assignment Operators</span></h2>
+                        <p>The next is <span>assignment</span> operators. The best example of this is =, which assigns a value to variables. Aside from it, there are also:</p>
+                        <pre><code class="language-python">
+random_number = 10
+
+random_number += 10
+print(random_number) # outputs 20
+
+random_number -= 5
+print(random_number) # outputs 15
+
+random_number *= 2
+print(random_number) # outputs 30
+
+random_number /= 5
+print(random_number) # outputs 6.0
+
+random_number %= 4
+print(random_number) # outputs 2.0
+
+random_number *= 20
+print(random_number) # outputs 40.0
+
+random_number //= 7
+print(random_number) # outputs 5.0
+
+random_number **= 2
+print(random_number) # outputs 25.0
+
+# Essentially, the assignment operators aside from = is broken down as:
+# variable1 (operation)= variable2 is the same as variable1 = variable1 (operation) variable2
+# So, in random += 10, it's basically saying random = random + 10
+                        </code></pre>
+                        <br>
+                        <h2><span>Comparison Operators</span></h2>
+                        <p>The next type of operator is <span>comparison</span> operators, which is very similar to actual comparison operators in real mathematics. It returns a boolean True or False based on the result of the expression.</p>
+                        <pre><code  class="language-python">
+# A thing worth noting is that these operators is not limited to being used on floats or integers, they can actually also be used in things such as strings or lists
+
+# == compares if the first value is equal to the other
+print(5 == 10) # outputs False
+print(5 == 5) # outputs True
+print("peppa" == "peppa") # outputs True
+
+# != compares if the first value is NOT equal to the other
+print(5 != 10) # outputs True
+print(5 != 5) # outputs False
+print("peppa" != "george") # outputs True
+
+# &lt; and &gt;, compares if the first value is less than or greater than the second value, respectively.
+print(5 &lt; 10) # outputs True
+print(5 &gt; 10) # outputs False
+print(5 &gt; 5) # outputs False
+
+# For strings, python does a comparison for each character and moves onto the next one if the previous are the same. Then, it compares the unicode values of the characters
+print("peppa" &lt; "george") # outputs False, since p and g (the first elements of each string) are different, and g = 103, while p = 112
+print("jorge" &gt; "jorj") # outputs False, since the first differing elements of the strings is g and j, and g = 103 and j = 106
+print("jorj" &lt; "jorje") # outputs True, since Python is going to hit a critical point where the first value has no more characters, and the second still has e. In this case, the longer string is considered greater
+# It's crucial to note that since it refers to the unicode values of the characters, it is case sensitive since the lowercase and uppercase of a letter havve different unicode values
+
+# For lists, it also does a lexicographic comparison similar to strings. It looks for the first unique values and compares them.
+print([1,2,3,4] &lt; [2,4,6]) # outputs True
+
+# &lt;= and &gt;=, compares if the first value is less than/equal to or greater than/equal to the second value, respectively. It's basically the same as &lt; and &gt; with the extra =
+print(5 &lt;= 5) # outputs True
+print("jarvis" &gt;= "jarvis") # outputs True
+                        </code></pre>
+                        <br>
+                        <h2><span>Logical Operators</span></h2>
+                        <p><span>Logical</span> operators are mainly used to combine comparisons.</p>
+                        <br>
+                        <pre><code  class="language-python">
+# In Python, the logical operators are and, or, and not
+
+# and returns True if and only if both arguments are True
+print(True and True) # outputs True
+print(True and False) # outputs False
+print(False and False) # outputs False
+
+# or returns true if at least one of the arguments is True
+print(True or True) # outputs True
+print(True or False) # outputs True
+print(False or False) # outputs False
+
+# not returns the opposite of the value after it. For example,
+print(not True) # outputs False
+print(True and not False) # outputs True, since it first evaluates not False (which is True) then does the and comparison
+                        </code></pre>
+                        <h2><span>Bitwise Operators</span></h2>
+                        <p>Finally, <span>bitwise</span> operators are used to do bitwise calculations on integers. The integers are first converted to binary, and the desired operations are done on it.</p>
+                        <pre><code  class="language-python">
+# In Python, the bitwise operators are AND (&), OR (|), XOR (^), NOT (~), right shift (&gt;&gt;), and left shift (&lt;&lt;)
+
+# &, |, and ^ can all be visualized this way:
+'''
+Suppose you have two integers, 10 and 7. Their binary representations are as follows:
+1010 -> 10
+111  -> 7
+Since their lengths are not the same, we need to put leading zero/s to the shorter one until they are. Take note that this won't happen if the binary representations are the same length already
+1010
+0111
+
+For &, it checks through each position and returns a 1 if and only if both values are 1. Thus,
+1010
+0111
+----
+0010
+10 is the resulting binary representation, which is 2. So, 10 & 7 is equal to 2.
+
+For |, it checks through each position and returns a 1 if at least one of the values is 1. Thus,
+1010
+0111
+----
+1111
+1111 is the resulting binary representation, which is 15. So, 10 | 7 is equal to 15.
+
+Finally, for ^, it checks through each position and returns a 1 if and only if one of the values is 1.
+1010
+0111
+----
+1101
+1101 is the resulting binary representation, which is 13. So, 10 ^ 7 = 13.
+'''
+# For these three operations, the order of the operands does not matter.
+
+# As you may have guessed by now, ~ just gets the binary representation of a number, flips the 1s and 0s, and returns its integer form, but the catch it is evaluates the result using two's complement
+print(~7) # this outputs -8
+# In a nutshell, using ~ on an integer just returns -(n+1), where n is the integer
+
+# &gt;&gt; and &lt;&lt; shift the binary representation to the right or to the left by a number of units, respectively.
+print(10 &gt;&gt; 2) # this outputs 2, since 1010 shifted 2 units to the right is just 10, whose decimal representation is 2
+print(10 &lt;&lt; 2) # this outputs 40, since 1010 shifted 2 units to the left is 101000, whose decimal representation is 40
+                            </code></pre>
+                            <h1 id = "conventions">Conventions</h1>
+                            <p>Here's a list of key Python conventions that you should follow:</p>
+                            <ul style = "margin-left: 2vw;">
+                                <li style="line-height: 2vw;">Use <span>snake_case</span> for variable and function names: Use lowercase words separated by underscores (e.g., <span>my_variable</span>, <span>calculate_total()</span>).</li>
+                                <li style="line-height: 2vw;">Use <span>ALL_CAPS</span> for constants: Constants should be written in all uppercase letters with underscores separating words (e.g., <span>MAX_SIZE</span>).</li>
+                                <li style="line-height: 2vw;">Indentation: In Python, indentation is crucial for defining code structure, as it replaces braces `{}` used in other languages. <span>Improper indentation will result in errors</span>, making it essential for code execution.</li>
+                                <li style="line-height: 2vw;">Use descriptive variable names: Variables should have meaningful names that describe their purpose (e.g., <span>user_age</span> instead of <span>x</span>).</li>
+                                <li style="line-height: 2vw;">Use blank lines to separate code sections: Use one or two blank lines to separate logical sections of code (e.g., between functions or class definitions).</li>
+                                <li style="line-height: 2vw;">Comment your code: Use comments to explain complex logic and document your code with <span>#</span> for single-line comments.</li>
+                                <li style="line-height: 2vw;">Docstrings for functions and classes: Use triple quotes (<span>"""</span>) to document functions, methods, and classes. These are called docstrings.</li>
+                                <li style="line-height: 2vw;">Use spaces around operators: For readability, use spaces around operators (e.g., <span>total = a + b</span> instead of <span>total=a+b</span>).</li>
+                                <li style="line-height: 2vw;">Import modules at the top of the file: All imports should be at the beginning of the file.</li>
+                            </ul>
+                </div>
+                <div class = "hyperlinks">
+                    <h1>Table of Contents</h1>
+                    <ul class = "tableOfContents">
+                        <li><a href = "#datatypes">Data Types</a></li>
+                        <li><a href = "#operators">Operators</a></li>
+                        <li><a href = "#conventions">Conventions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id = "lesson05" class = "lessons">
+            <div class = "lessonHeadingContainer">
+                <hr class = "lessonHeadingLine">
+                <h1 class = "lessonHeading"> </h1>
+            </div>
+            <div class = "lessonContainer1">
+                <div class = "lessonContent1">
+                    <h1 id = "oop">Four Pillars of Object Oriented Programming (OOP)</h1>
+                        <p>Before we get into actual modular programming, let's first talk about the four pillars of OOP: <span>Abstraction</span>, <span>Encapsulation</span>, <span>Inheritance</span>, and <span>Polymorphism</span>.</p>
+                        <br>
+                        <div style = "width: 100%; contain: content; margin-bottom: 2vh;">
+                            <figure style = "width: 100%; float: left; text-align: center;">
+                                <img src = "images/0501.png" style = "max-height: 50vh;">
+                                <figcaption style = "text-align: center;">Figure 1. The typical representation of the 4 OOP pillars</figcaption>
+                            </figure>
+                        </div>
+                        <p>Typically, the four pillars are visualized as literal pillars as shown in Figure 1. Let's break down what each of these pillars mean in Python.</p>
+                        <br>
+                        <p><span>Abstraction</span> focuses on exposing only the <span>necessary details</span> and hiding the others from the user. It allows you to define a <span>blueprint</span> or interface without getting bogged down by implementation details. In Python, abstraction is achieved through classes and methods, allowing you to model real-world entities with only relevant properties and behaviors. Another example of abstraction is Python libraries, since the user is only told how to use the library, and not necessarily what happens behind the scenes.</p>
+                        <br>
+                        <p><span>Encapsulation</span> is the concept of bundling data and methods that operate on that data within a single unit, or <span>object</span>. In Python, this is done using <span>classes</span>. Encapsulation essentially wraps the data in a "capsule", such that they cannot be accessed or modified outside of it (unless there are getters and setters, which we'll discuss later on). For example, you can use private variables (by prefixing them with an underscore) to restrict access from outside the class, allowing you to define a clear interface for interacting with the object.</p>
+                        <br>
+                        <p><span>Inheritance</span> is a mechanism that allows one <span>class</span> (called a <span>child</span> or <span>subclass</span>) to inherit properties and behaviors from another class (called a <span>parent</span> or <span>superclass</span>). This promotes <span>code reuse</span> and helps create a hierarchical relationship between classes. For instance, you can have a parent Gadget class, with specific subclasses such as Phone or Laptop that can inherit common properties and methods from Gadget, while also having the option to have unique behaviors.</p>
+                        <br>
+                        <p><span>Polymorphism</span> allows different classes to be treated as instances of the same class through a common interface. It enables a single <span>function</span> or <span>method</span> to operate on different types of objects. In Python, polymorphism is often used when a parent class method is overridden in a child class, providing specific behavior for the child while maintaining a consistent interface. This flexibility allows you to use a unified approach to handle different data types and objects, making the code more flexible.</p>
+                    <h1 id = "importingLibraries">Importing Libraries</h1>
+                        <p>Libraries, also known as modules, are essentially files composed of functions (and sometimes, variables) designed to make your life easier. In order to include a library in our code, we use the <span>import</span> keyword.</p>
+                        <p>To demonstrate this, let's compare the implementation of a <span>factorial function</span> on base Python, versus Python with the math library.</p>
+                        <div style = "display: flex; width: 100%;">
+                            <pre style = "width: 48%; margin-right: 4%"><code class="language-python">
+n = int(input())
+result = 1
+for i in range(1, n + 1):
+    result *= i
+print(result)
+                            </code></pre>
+                            <pre style = "width: 48%;"><code class="language-python">
+import math
+n = int(input())
+print(math.factorial(n))
+
+
+                            </code></pre>
+                        </div>
+                        <p>As you can see, using the math module to get the factorial is much easier and shorter. There are other libraries available aside from math, which can even be complex stuff such as machine learning.</p>
+                        <p>It's also worth noting that you can import multiple libraries on a single program. You are not limited to just one library.</p>
+                    <h1 id = "functions">Functions</h1>
+                        <p>A <span>function</span> in Python is a block of reusable code designed to perform a specific task. It allows you to organize your code into logical chunks, making it easier to read, test, and maintain. You define a function using the def keyword, followed by the function name and parentheses (), which may contain parameters. A function can return a result using the return statement, or simply perform an action.</p>
+                        <br>
+                        <p>To apply this, let's try to turn our previous square root example into a function.</p>
+                        <pre style = "width: 50%"><code class="language-python">
+def factorial(n):
+result = 1
+for i in range(1, n + 1):
+    result *= i
+return result
+                            </code></pre>
+                        <p>In this example, our factorial code now becomes reusable. Instead of having to write the same block of code every time we need it, we can just call factorial(n) and get its value.</p>
+                        <br>
+                        <p>As mentioned, it's also possible for functions to simply do an action, such as modify a variable, without actually returning anything.</p>
+                        <pre style = "width: 50%"><code class="language-python">
+def increment_value(a_dict, key):
+    if key in my_dict:
+    my_dict[key] += 1
+    else:
+    my_dict[key] = 1
+                        </code></pre>
+                        <p>In this example, the function only modifies a value in a given dictionary. It does not return anything.</p>
+                        <br>
+                        <p>A default parameter value may also be set. In this case, if no arguments are given, the default value will automatically be used. The parameter with a default value should be at the end of the list of parameters.</p>
+                        <pre style = "width: 50%"><code class="language-python">
+def make_name(first_name, last_name, middle_name = ""):
+    if middle_name == "":
+        name = first_name + " " + last_name
+    else:
+        name = first_name + " " + middle_name + " " + last_name
+    return name
+# sample usages:
+name1 = make_name("Chuck", "Cheese", "E.")
+name2 = make_name("Harrison", "Ford")
+print(name1) # This prints out Chuck E. Cheese
+print(name2) # This prints out Harrison Ford
+                        </code></pre>
+                        <br>
+                        <p>Finally, it's possible for a function to not have anything by using the pass keyword as shown below. This can be helpful if you want to put a placeholder for a function you'll work on later in the project.</p>
+                        <pre style = "width: 50%"><code class="language-python">
+def tedious_function():
+    pass
+                        </code></pre>
+                        <p>You can still call this function, but nothing will happen.</p>
+                        <h1 id="objects">Objects</h1>
+                        <p>In Python, everything is an object, which means functions, variables, data structures, and even classes are all objects. Object-Oriented Programming (OOP) is a paradigm that uses objects and classes to structure your code, allowing you to model real-world entities in your programs.</p>
+                        <br>
+
+                        <h2><span>Defining a Class</span></h2>
+                        <p>A class is a blueprint for creating objects. Each object created from the class can have its own properties (attributes) and behaviors (methods). Attributes are variables that belong to an object, while methods are functions that belong to the class. You can define multiple attributes and methods within a class.</p>
+                        <pre><code class="language-python">
+# Let's make a simple Car class:
+class Car: # It's important to note that classes in Python follow CamelCase
+    def __init__(self, brand, model): # In other coding languages, this is essentially a constructor
+        self.brand = brand  # Attribute: car's brand
+        self.model = model  # Attribute: car's model
+
+    def display_info(self): # This is a method
+        print(f"This car is a {self.brand} {self.model}")
+
+# Creating an object (an instance of the Car class)
+my_car = Car("Toyota", "Corolla")
+my_car.display_info()  # outputs "This car is a Toyota Corolla"
+                        </code></pre>
+                        
+                        <h2><span>Application - Encapsulation</span></h2>
+                        <pre><code class="language-python">
+# Encapsulation can be seen in Python with the usage of __ at the beginning of a variable to essentially declare it as "private"
+# Let's use this example of a BankAccount class. In it, balance has __ at the beginning. This means that without a function to get the balance (get_balance), there's no way for stuff outside of the class to get the value of __balance
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount("Alice", 1000)
+account.deposit(500)
+print(account.get_balance())  # outputs 1500
+                        </code></pre>
+                        
+                        <h2><span>Application - Inheritance</span></h2>
+                        <pre><code class="language-python">
+# Inheritance is evident in Python as you can have parent classes and subclasses that share attributes and possibly methods with its parent.
+# Parent class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound.")
+
+# Child class inheriting from Animal
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} barks.")
+
+# Create an instance of Dog
+dog = Dog("Rexian")
+dog.speak()  # outputs Rexian barks.
+                        </code></pre>
+                        
+                        <h2><span>Application - Polymorphism</span></h2>
+                        <pre><code class="language-python">
+# Polymorphism is present in Python OOP since methods of the parent can be overriden by its children
+class Bird:
+    def fly(self):
+        print("Bird is flying.")
+
+class Airplane:
+    def fly(self):
+        print("Airplane is flying.")
+
+def let_it_fly(entity):
+    entity.fly()
+
+bird = Bird()
+airplane = Airplane()
+
+let_it_fly(bird)  # outputs "Bird is flying."
+let_it_fly(airplane)  # outputs "Airplane is flying."
+                        </code></pre>
+                        <h1>Application of Objects</h1>
+                        <p>To apply concepts on objects, let's try making a simple program that stores various manhwa (Korean comics), as well as the current progress of the reader by chapter.</p>
+                        <pre><code class="language-python">
+# A dictionary to store the manhwas
+manhwas = {}
+
+class Manhwa:
+    def __init__(self, title, genre, personal_rating, chapter = 0): # if there is no specified chapter, the default is 0, meaning the person hasn't started reading but has put it on their list
+        self.title = title
+        self.genre = genre
+        self.rating = personal_rating
+        self.chapter = chapter
+        manhwas[title] = self
+
+    def print_details(self):
+        print(f"{self.title}".ljust(40) + f"({self.genre})".ljust(12) + f"{self.rating} | Chapter {self.chapter}") # using f strings to make life easier
+
+    def read_chapter(self): # for when the user has just read a chapter
+        self.chapter += 1
+
+    def set_chapter(self, chapter): # for when the user wants to set the chapter to a specific spot
+        self.chapter = chapter
+
+    def change_rating(self, rating): # for when the user changes their mind about how good a manhwa is
+        self.rating = rating
+
+# function to print all the manhwas in the dictionary
+def print_all_manhwas():
+    print("Current Manhwa List:")
+    for manhwa in manhwas.values(): # using a for loop to iterate through the manhwas
+        manhwa.print_details()
+    print()
+
+manhwa1 = Manhwa("Solo Leveling", "Action", 9.5)
+manhwa2 = Manhwa("Tower of God", "Adventure", 9.0)
+manhwa3 = Manhwa("Legend of the Northern Blade", "Action", 8.5, 25)
+
+# Print the details of all the manhwas
+print_all_manhwas()
+
+# Let's try to do some actions:
+print("Reading a chapter of Solo Leveling...")
+manhwa1.read_chapter()
+manhwa1.print_details()
+
+print("\nSetting Tower of God to chapter 100...")
+manhwa2.set_chapter(100)
+manhwa2.print_details()
+
+print("\nChanging Legend of the Northern Blade's rating to 9.0...")
+manhwa3.change_rating(9.0)
+manhwa3.print_details()
+print()
+
+# Print the updated list of all manhwas
+print_all_manhwas()
+                        </code></pre>
+                        <p>The sample code above outputs the following:</p>
+                        <pre><code class="language-python">
+Current Manhwa List:
+Solo Leveling                           (Action)    9.5 | Chapter 0
+Tower of God                            (Adventure) 9.0 | Chapter 0
+Legend of the Northern Blade            (Action)    8.5 | Chapter 25
+
+Reading a chapter of Solo Leveling...
+Solo Leveling                           (Action)    9.5 | Chapter 1
+
+Setting Tower of God to chapter 100...
+Tower of God                            (Adventure) 9.0 | Chapter 100
+
+Changing Legend of the Northern Blade's rating to 9.0...
+Legend of the Northern Blade            (Action)    9.0 | Chapter 25
+
+Current Manhwa List:
+Solo Leveling                           (Action)    9.5 | Chapter 1
+Tower of God                            (Adventure) 9.0 | Chapter 100
+Legend of the Northern Blade            (Action)    9.0 | Chapter 25
+                            </code></pre>
+                </div>
+                <div class = "hyperlinks">
+                    <h1>Table of Contents</h1>
+                    <ul class = "tableOfContents">
+                        <li><a href = "#oop">Four Pillars of Object Oriented Programming (OOP)</a></li>
+                        <li><a href = "#importingLibraries">Importing Libraries</a></li>
+                        <li><a href = "#functions">Functions</a></li>
+                        <li><a href = "#objects">Objects</a></li>
+                        <li><a href = "#objects">Application of Objects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id = "lesson06" class = "lessons">
+            <div class = "lessonHeadingContainer">
+                <hr class = "lessonHeadingLine">
+                <h1 class = "lessonHeading"> </h1>
+            </div>
+            <div class = "lessonContainer1">
+                <div class = "lessonContent1">
+                    <h1 id = "exceptionHandling">Exception Handling</h1>
+                        <p><span>Exceptions</span> take place when the <span>syntax of a program is correct</span>, but the execution of the code <span>causes an error</span> or still runs but <span>produces a wildly inaccurate result</span>.</p>
+                        <pre style = "width: 50%"><code class="language-python">
+a = float(input())
+print("the reciprocal of the number you input is:")
+print(1 / a)
+                        </code></pre>
+                        <p>In the above example, If the input is 0, then the result will be a ZeroDivisionError, as dividing a number by 0 raises an error in Python. Conversely, if you input anything other than a number (for example: “f1sh”), then a ValueError will be raised, as the float() method requires a number, not a string (even if it has numbers). There are several ways to handle exceptions, one of which is to avoid exceptions altogether by checking if the values are valid.</p>
+                        <br>
+                        <p>However, a better example would be to use a <span>try-catch</span> block, which allows you to catch several cases of errors in one go.</p>
+                        <p>How it functions is that within the try block, the code will be attempted to be executed without error. In the event of an error occurring, the sequence will jump to the code within the except block. You can catch several exceptions with one block, or allocate individual exceptions to a different exception block, as shown below:</p>
+                        <pre style = "width: 50%"><code class="language-python">
+try:
+    a = float(input())
+    print("The reciprocal of the number you input is:")
+    print(1 / a)
+except ValueError:
+    print("Input a number!")
+except ZeroDivisionError:
+    print("Zero has no defined reciprocal!")
+except: 
+    print("Something went wrong, and we don't know what happened!")
+finally:
+    print("Thanks for using this program, broski.")
+                        </code></pre>
+                        <p>It's important to note that the block will only count the first except that it finds that fits the exception. Then, if a finally block is present, it gets executed regardless of whether or not an exception was found.</p>
+                        <br>
+                        <p>Another thing to note is that exceptions are a class, allowing its features to be used and inherited. This implies that it's also possible to make your own exceptions by making a class that extends Exception.</p>
+                        <pre style = "width: 50%"><code class="language-python">
+class SecretError(Exception):
+    pass
+    
+try:
+    password = str(input("What's the password big bro? "))
+    if len(password) == 8:
+        raise SecretError("You found a secret!")
+    else:
+        print("That's not a secret password.") 
+except SecretError as e:
+    print(f"Secret Found: {e}")
+finally:
+    print("Thanks for trying to guess a secret password!")
+                        </code></pre>
+                    <h1 id = "slicing">Slicing</h1>
+                        <p><span>Slicing</span> allows you to access a <span>subset</span> of a list, string, or other sequence types by specifying a range (start, stop) and an optional step. Let's apply this given a sample array:</p>
+                        <p>When slicing, it's important to note that given a start and stop index, the resulting subset includes the element at the start index, but not the element at the stop index. Another thing is that the first element is at index 0, not 1.</p>
+                        <pre style = "width: 100%"><code class="language-python">
+# The general syntax is sequence[start:stop:step]
+cars = ['sedan', 'truck', 'suv', 'coupe', 'convertible', 'sports', 'van', 'wagon', 'hatchback']
+
+print(cars[1:4]) # ['truck', 'suv', 'coupe']
+
+# If the stop is not specified, it assumes that it's up until the end
+print(cars[1:]) # ['truck', 'suv', 'coupe', 'convertible', 'sports', 'van', 'wagon', 'hatchback']
+
+# If the start is not specified, it assumes that the start index is 0
+print(cars[:5]) # ['sedan', 'truck', 'suv', 'coupe', 'convertible']
+
+#If neither is specified, then
+cars[::] = cars
+
+#If start = stop, then
+cars[2:2] = []
+
+# Adding a step means that it includes the first element, then every nth element after, with n being the step. A step of 1 is the default.
+print(cars(::2)) # ['sedan', 'suv', 'convertible', 'van', 'hatchback']
+
+# Negative values is where things get interesting. As a guide, the last value of a sequence is at index -1, the second last at index -2, and so on.
+# Assuming that the step is positive, the start HAS TO BE further to the left than the stop, or else it will return an empty sequence.
+# But if the step is negative, that rule flips.
+
+print(cars[4:-5]) # []
+# This actually returns empty, since the indices 4 and -5 refer to the exact same index in this case.
+
+print(cars[4::-1]) # ['convertible', 'coupe', 'suv', 'truck', 'sedan']
+# In here, if the stop is unspecified with a negative step, it assumes that the values are from index 4 leftwards.
+
+print(cars[:2:-1]) ['hatchback', 'wagon', 'van', 'sports', 'convertible', 'coupe']
+# Conversely, if the start is unspecified with a negative step, it assumes that the values are from the rightmost element to before index 2 (which is index 3).
+
+print(cars[4:2:-1]) # ['convertible', 'coupe']
+# Here, it starts at index 4, then goes leftwards until before the element at index 2
+
+print(cars[::-1]) # ['hatchback', 'wagon', 'van', 'sports', 'convertible', 'coupe', 'suv', 'truck', 'sedan']
+# This is actually a quick way to reverse the order of elements in a sequence
+                        </code></pre>
+                        <h1 id="fileio">File I/O</h1>
+                        <p>In Python, File I/O (Input/Output) refers to the reading and writing of files. It's essential when you want your programs to persistently save data, or retrieve data from a file for processing. Python provides several built-in functions for handling file I/O, such as <span>open(), read(), write(),</span> and <span>close()</span>. Let's explore the basics.</p>
+
+                        <h2><span>Opening a File</span></h2>
+                        <p>To interact with a file, you first need to open it. Python’s <span>open()</span> function allows you to open a file in different modes:</p>
+                        <ul style = "margin-left: 2vw;">
+                            <li><span>'r'</span>: Opens the file for reading (default mode).</li>
+                            <li><span>'w'</span>: Opens the file for writing (overwrites the file if it already exists).</li>
+                            <li><span>'a'</span>: Opens the file for appending (adds data to the end of the file).</li>
+                            <li><span>'b'</span>: Opens the file in binary mode (useful for non-text files like images).</li>
+                        </ul>
+                        <pre><code class="language-python">
+# Example of opening a file in read mode
+file = open("example.txt", "r")
+print(file.read())  # This reads and prints the content of the file
+file.close()  # Always close the file after finishing
+                        </code></pre>
+                        
+                        <h2><span>Reading from a File</span></h2>
+                        <p>Once a file is opened, you can use various methods to read its contents:</p>
+                        <ul style = "margin-left: 2vw;">
+                            <li><span>read()</span>: Reads the entire file content.</li>
+                            <li><span>readline()</span>: Reads one line at a time.</li>
+                            <li><span>readlines()</span>: Returns a list of all the lines in the file.</li>
+                        </ul>
+                        <pre><code class="language-python">
+file = open("example.txt", "r")
+
+# Reading all the content
+content = file.read()
+print(content)
+
+# Reading line by line
+file.seek(0)  # Reset file pointer to the beginning
+for line in file:
+print(line.strip())  # Prints each line
+
+file.close()
+                        </code></pre>
+                        
+                        <h2><span>Writing to a File</span></h2>
+                        <p>To write to a file, you can open it in <span>'w'</span> or <span>'a'</span> mode. Remember that opening a file in write mode will overwrite the entire file.</p>
+                        <pre><code class="language-python">
+file = open("example.txt", "w")  # Open the file in write mode
+file.write("Hello, World!\n")  # Write a line to the file
+file.write("This is another line.\n")
+file.close()  # Close the file
+
+# Appending to the file
+file = open("example.txt", "a")
+file.write("Appending a new line!\n")
+file.close()
+                        </code></pre>
+                        
+                        <h2><span>Using "with" for File Handling</span></h2>
+                        <p>Python provides a better way to handle files using the <span>with</span> statement. It ensures the file is automatically closed after the block is executed, even if exceptions occur.</p>
+                        <pre><code class="language-python">
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)  # File is automatically closed after this block
+                        </code></pre>                   
+                </div>
+                <div class = "hyperlinks">
+                    <h1>Table of Contents</h1>
+                    <ul class = "tableOfContents">
+                        <li><a href = "#exceptionHandling">Exception Handling</a></li>
+                        <li><a href = "#slicing">Slicing</a></li>
+                        <li><a href = "#fileio">File I/O</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    let inMenus = false;
+    let inLesson = false;
+    function typeText(element, text, pace) {
+        let index = 0;
+        function type() {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, pace);
+            }
+        }
+        type();
+    }
+
+    let optionNumberings = Array.from(document.getElementsByClassName("optionNumbering"));
+    let optionTitles = Array.from(document.getElementsByClassName("optionTitle"));
+    let lineBreaks = Array.from(document.getElementsByClassName("lineBreak"));
+    let optionDescriptions = Array.from(document.getElementsByClassName("optionDescription"));
+    function goToMenu() {
+        if(!inMenus && !inLesson) {
+            document.getElementById("menus").style.visibility = "visible";
+            document.getElementById("home").style.filter = 'blur(3px)'; 
+            document.getElementById("menus").style.opacity = 1;
+            setTimeout(() => {
+                document.getElementById("menus").style.opacity = 1;
+            }, 500)
+            setTimeout(() => {
+                Array.from(document.getElementsByClassName("menuOption")).forEach((element) => {
+                    element.style.height = "15vw";
+                    element.style.padding = "1%";
+                    element.style.border = ".2vw solid transparent";
+                })
+            }, 1000)
+            setTimeout(() => {
+                let count = 1;
+                function updateNumbers(element, display, count) {
+                    if (display <= count) {
+                        element.textContent = "0" + display.toString();
+                        setTimeout(() => updateNumbers(element, display + 1, count), 500);
+                    }
+                    if (display == count) {
+                        optionTitles[count - 1].style.opacity = 1;
+                        lineBreaks[count - 1].style.opacity = 1;
+                        lineBreaks[count - 1].style.width = "100%";
+                        optionDescriptions[count - 1].style.opacity = 1;
+                    }
+                }
+                optionNumberings.forEach((element) => {
+                    element.style.opacity = 1;
+                    updateNumbers(element, 0, count);
+                    count++;
+                })
+            }, 1500)
+            setTimeout(() => {
+                inMenus = true;
+            }, 5000)
+        }
+    }
+    function leaveMenu(event) {
+        if (event.key == "Escape" && inMenus){
+            for (let i = 0; i < optionNumberings.length; i++){
+                optionNumberings[i].style.opacity = 0;
+                optionTitles[i].style.opacity = 0;
+                lineBreaks[i].style.opacity = 0;
+                lineBreaks[i].style.width = "0%";
+                optionDescriptions[i].style.opacity = 0;
+            }
+            setTimeout(() => {
+            Array.from(document.getElementsByClassName("menuOption")).forEach((element) => {
+                element.style.height = "0vw";
+                element.style.padding = "0%";
+                element.style.border = "none";
+            })
+            }, 500)
+            setTimeout(() => {
+                Array.from(document.getElementsByClassName("menuOption")).forEach((element) => {
+                    document.getElementById("home").style.filter = 'blur(0px)'; 
+                    document.getElementById("menus").style.opacity = 0;
+                })
+            }, 1000)
+            setTimeout(() => {
+                document.getElementById("menus").style.visibility = "hidden";
+                inMenus = false;
+            }, 2000)
+        }
+    }
+
+    let lessons = [document.getElementById("lesson01"), document.getElementById("lesson02"), document.getElementById("lesson03"), document.getElementById("lesson04"), document.getElementById("lesson05"), document.getElementById("lesson06")];
+    let lessonHeaders = ["Your Computer", "Software Development", "Control Structures and Flowcharts", "Python Fundamentals", "Modular Programming", "More Python"];
+    let hasClicked = false;
+    let lastAccessTime = 0;
+    function accessLessons(element) {
+        if (inMenus && !inLesson && !hasClicked) {
+            hasClicked = true;
+            lastAccessTime = Date.now();
+            
+            let lessonNumber = Array.from(document.getElementsByClassName("menuOption")).indexOf(element) + 1;
+            let lookingFor = "lesson0" + lessonNumber.toString();
+            let lesson = document.getElementById(lookingFor);
+            let lessonTitle = lessonHeaders[lessonNumber - 1];
+            
+            document.getElementById("lessonContainer").style.display = "flex";
+            lesson.style.display = "flex";
+            lesson.style.opacity = "1";
+            document.documentElement.style.transform = "translateX(-100%)";
+            
+            setTimeout(() => {
+                lesson.getElementsByClassName("lessonHeading")[0].textContent = "";
+                typeText(lesson.getElementsByClassName("lessonHeading")[0], lessonTitle, 100);
+                lesson.getElementsByClassName("lessonHeadingLine")[0].style.border = ".3vw solid var(--tertiary-hover)";
+                lesson.getElementsByClassName("lessonHeadingLine")[0].style.width = "45%";
+                lesson.querySelectorAll("div")[1].style.opacity = 1;
+                
+                inLesson = true;
+                inMenus = false;
+                hasClicked = false;
+            }, 1000);
+        }
+    }
+
+    function leaveLessons(event) {
+        const currentTime = Date.now();
+        if (event.key === "Escape" && inLesson) {
+            if (currentTime - lastAccessTime < 3000) {
+                return;
+            }
+            window.scrollTo(0, 0);
+            console.log("scrollin")
+            setTimeout(() => {
+                document.documentElement.style.transform = "translateX(0)";
+            }, 600);
+            setTimeout(() => {
+                lessons.forEach((element) => {
+                    element.style.display = "none";
+                    element.style.opacity = "0";
+                    element.getElementsByClassName("lessonHeading")[0].innerHTML = "";
+                    element.getElementsByClassName("lessonHeadingLine")[0].style.width = "0%";
+                    element.getElementsByClassName("lessonHeadingLine")[0].style.border = ".3vw solid transparent";
+                    element.querySelectorAll("div")[1].style.opacity = 0;
+                });
+                
+                document.getElementById("lessonContainer").style.display = "none";
+                inMenus = true;
+                inLesson = false;
+            }, 1000);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(() => {
+            typeText(document.getElementById("title"), "Learn Computing.", 100);
+        }, 1000)
+        setTimeout(() => {
+            document.getElementById("titleDesc").style.opacity=1;
+            document.getElementById("topLine").style.border = ".3vw solid var(--tertiary-hover)";
+            document.getElementById("bottomLine").style.border = ".3vw solid var(--tertiary-hover)";
+            document.getElementById("topLine").style.width = "45%";
+            document.getElementById("bottomLine").style.width = "45%";
+        }, 3000)
+        setTimeout(() => {
+            document.getElementById("homeStart").style.opacity=1;
+        }, 3500)
+        setTimeout(() => {
+            document.getElementById("homeImage").style.opacity=1;
+        }, 4000)
+    })
+    document.addEventListener("keydown", (event) => {
+        leaveMenu(event);
+        leaveLessons(event);
+    })
+    Array.from(document.getElementsByClassName("menuOption")).forEach((element) => {
+        element.addEventListener("click", function(event){
+            accessLessons(event.currentTarget);
+        });
+    })
+</script>
+</body>
+</html>

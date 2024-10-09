@@ -1,0 +1,224 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #626267;
+    --tertiary-color: orange;
+    --tertiary-hover: #F28123;
+}
+*:not(span[class]){
+    font-family: Inter, sans-serif;
+}
+*{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 1vw;
+}
+html {
+    transition: .5s ease;
+}
+
+#home{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    transition: 1s ease;
+}
+#topLine{
+    position: absolute;
+    width: 0%;
+    visibility: visible;
+    opacity: 1;
+    border: .3vw solid transparent;
+    margin-top: 3vh;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    transition: 1s ease;
+}
+#bottomLine{
+    position: absolute;
+    width: 0%;
+    visibility: visible;
+    opacity: 1;
+    border: .3vw solid transparent;
+    right: 0;
+    margin-top: 97vh;
+    border-top-left-radius: 2vw;
+    border-bottom-left-radius: 2vw;
+    transition: 1s ease;
+    transform-origin: left;
+}
+#title{
+    font-size: 4vw;
+    padding: 0 0 .5vw 0;
+}
+#titleDesc{
+    max-width: 70%;
+    padding: 0 0 1vw 0;
+    opacity: 0;
+    transition: .5s ease;
+}
+#homeStart{
+    width: 25%;
+    height: 3vw;
+    opacity: 0;
+    border-radius: .3vw;
+    transition: .5s ease;
+    background-color: var(--tertiary-color);
+    border-color: var(--secondary-color);
+    font-size: 1vw;
+}
+#homeStart:hover{
+    background-color: var(--tertiary-hover);
+}
+#homeImage{
+    margin-right: 5%;
+    opacity: 0;
+    transition: .5s ease;
+    max-width: 50vw;
+}
+
+#menus{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: absolute;
+    padding: 2%;
+    flex-direction: column;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgb(0, 0, 0, .5);
+    transition: 1s ease;
+}
+.row{
+    display: flex;
+    height: 40%;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+.menuOption{
+    height: 0vw;
+    width: 25vw;
+    margin: 0 3vw;
+    background-color: var(--tertiary-color);
+    border: none;
+    border-radius: 1vw;
+    transition: 1s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.menuOption:hover{
+    scale: 1.1;
+    background-color: var(--tertiary-hover);
+}
+.optionNumbering{
+    transition: .5s ease;
+    opacity: 0;
+    font-size: 4vw;
+    width: 25%;
+}
+.optionTitle{
+    transition: .5s ease;
+    opacity: 0;
+    font-size: 1.5vw;
+}
+.lineBreak{
+    border: .05vw solid black;
+    width: 0;
+    transition: .5s ease;
+}
+.optionDescription{
+    font-size: 1vw;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+#lessonContainer{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 100%;
+    display: none;
+}
+#lessonContainer span:not([class]){
+    color: var(--tertiary-hover)
+}
+.lessons{
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+}
+.lessonHeadingContainer{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.lessonHeadingLine{
+    width: 0%;
+    border: .3vw solid transparent;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    transition: 1s ease;
+}
+.lessonHeading{
+    margin-left: 2vw;
+    font-family: Montserrat, sans-serif;
+    font-size: 3vw;
+}
+.tableOfContents{
+    margin-left: 2vw;
+}
+
+.lessonContainer1{
+    display: flex;
+    opacity: 0;
+    width: 98vw;
+    margin: 1vh 2vw;
+    padding-bottom: 2vh;
+    transition: 1s ease;
+}
+.lessonContainer1 h1{
+    font-size: 2vw;
+    margin-bottom: 1.5vh;
+    margin-top: 1.5vh;
+}
+.lessonContent1{
+    width: 75%;
+}
+.hyperlinks{
+    width: 25%;
+    padding-left: 2vw;
+}
+.hyperlinks a{
+    color: var(--tertiary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;    
+}
+.hyperlinks a:hover {
+    color: var(--tertiary-hover);
+}
+.hyperlinks a:active {
+    color: var(--secondary-color);
+}
+code[class*=language-], pre[class*=language-]{
+    font-size: .8vw !important;
+}
+code[class*=language-] span{
+    font-size: .8vw;
+}
